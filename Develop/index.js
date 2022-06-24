@@ -1,4 +1,4 @@
-// TODO: Include packages needed for this application
+// packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
@@ -8,7 +8,7 @@ const genMd = require('./utils/generateMarkdown');
 const writeFileSync = util.promisify(fs.writeFile);
 
 
-// TODO: Create an array of questions for user input
+// array of questions for user input
 const questions = [
   {
     type: 'input',
@@ -27,7 +27,7 @@ const questions = [
   },
   {
     type: 'input',
-    message: 'write a short description of your project',
+    message: 'write a short description of your project.',
     name: 'description'
   },
   {
@@ -67,11 +67,38 @@ const questions = [
   }
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
+// function to prompt user (returns answer object)
+const promptUser = () => {
+  return inquirer
+    .prompt(questions);
+}
 
-// TODO: Create a function to initialize app
-function init() { }
+// function to write README file
+const writeToFile = (fileName, data) => {
+  return writeToFileAsync(fileName, data);
+}
+
+// function to initialize app
+const init = async () => {
+  try {
+    console.log('Welcome to the README generator!\nPlease fill out the following form.')
+
+    // ask user to answer questions
+    const answers = await promptUser();
+
+    // create md content from user's answers
+    const fileContent = genMD(answers);
+
+    // write markdown content to README.md file
+    await writeToFile('./output/README.md', fileContent);
+
+    // notify user that markdown file has been created
+    console.log('README.md file created in output folder!');
+  } catch (err) {
+    console.error('Error creating README. File not created');
+    console.log(err);
+  }
+}
 
 // Function call to initialize app
 init();
