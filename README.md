@@ -10,6 +10,12 @@ https://user-images.githubusercontent.com/26747028/175776742-80ede26e-4697-40e7-
 
 <img width="695" alt="image" src="https://user-images.githubusercontent.com/26747028/175776783-8cd78037-9c37-4552-9d74-ee08e3e61c90.png">
 
+
+## Output README
 <img width="755" alt="image" src="https://user-images.githubusercontent.com/26747028/175776902-4c54a432-ba0a-4b75-8db8-4a09477584de.png">
 
-
+## Installation
+To install dependencies 
+`
+npm i
+`
