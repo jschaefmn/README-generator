@@ -15,7 +15,12 @@ https://user-images.githubusercontent.com/26747028/175776742-80ede26e-4697-40e7-
 <img width="755" alt="image" src="https://user-images.githubusercontent.com/26747028/175776902-4c54a432-ba0a-4b75-8db8-4a09477584de.png">
 
 ## Installation
-To install dependencies 
+To install dependencies: 
 `
 npm i
+`
+## Usage
+After installing dependencies, run application in the develop folder:
+`
+node index.js
 `
